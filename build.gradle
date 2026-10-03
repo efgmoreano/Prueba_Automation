@@ -1,0 +1,42 @@
+plugins {
+    id "net.serenity-bdd.serenity-gradle-plugin" version "5.2.4"
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+}
+
+defaultTasks 'clean','test','aggregate'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    slf4jVersion = '1.7.30'
+    serenityCoreVersion = '5.2.4'
+    junitVersion = '6.0.3'
+    assertJVersion = '3.24.2'
+    logbackVersion = '1.2.10'
+}
+
+dependencies {
+    testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+                "net.serenity-bdd:serenity-junit5:${serenityCoreVersion}",
+                "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
+                "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
+                "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
+                "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
+                "org.assertj:assertj-core:${assertJVersion}",
+                "ch.qos.logback:logback-classic:${logbackVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+}
+
+test {
+    useJUnitPlatform()
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate)
