@@ -6,7 +6,7 @@ Pruebas E2E para la página abstracta.com
 
 Git:
 
-    git clone https://github.com/serenity-bdd/serenity-junit-screenplay-starter
+    git https://github.com/efgmoreano/Prueba_Automation
     cd serenity-junit-screenplay-starter
 
 
