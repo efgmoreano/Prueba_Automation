@@ -5,12 +5,7 @@ Pruebas E2E para la página abstracta.com
 ## Get the code
 
 Git:
-
-    git https://github.com/efgmoreano/Prueba_Automation
-    cd serenity-junit-screenplay-starter
-
-
-Or simply [download a zip](https://github.com/serenity-bdd/serenity-junit-screenplay-starter/archive/master.zip) file.
+git https://github.com/efgmoreano/Prueba_Automation
 
 ## Use Maven
 
@@ -26,7 +21,5 @@ Open a command window and run:
 
 ## Viewing the reports
 
-Both of the commands provided above will produce a Serenity test report in the `target/site/serenity` directory. Go take a look!
-
-## Tailoring the project to your needs
+Both of the commands provided above will produce a Serenity test report in the `target/site/serenity` directory.
 
